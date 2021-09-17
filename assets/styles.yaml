@@ -33,6 +33,11 @@
   middle: '  ~'
   end: '-->'
 
+- id: AngleBracketPercentHastag
+  start: '<%'
+  middle: '#'
+  end: '%>'
+
 # tag::SlashAsterisk[]
 - id: SlashAsterisk
   start: '/*'           # <1>
@@ -49,6 +54,11 @@
   start: '{-'
   middle: ~
   end: '-}'
+
+- id: DoubleCurlyBracketBangDoubleDash
+  start: '{{!--'
+  middle: ''
+  end: '--}}'
 
 - id: DoubleDash
   start: '--'
