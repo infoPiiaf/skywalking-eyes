@@ -84,6 +84,16 @@ func TestFix(t *testing.T) {
 
 `,
 		},
+		{
+			filename: "test.hbs",
+			comments: `{{!--
+ Apache License 2.0
+   http://www.apache.org/licenses/LICENSE-2.0
+ Apache License 2.0
+--}}
+
+`,
+		},
 	}
 	for _, test := range tests {
 		t.Run(test.filename, func(t *testing.T) {
@@ -465,7 +475,23 @@ html
 html
   body
 `,
-		},
+}, {
+	name:  "Handlebars",
+	style: comments.FileCommentStyle("test.hbs"),
+	content: `<html>
+</html>
+`,
+	licenseHeader: getLicenseHeader("test.hbs", t.Error),
+	expectedContent: `{{!--
+ Apache License 2.0
+   http://www.apache.org/licenses/LICENSE-2.0
+ Apache License 2.0
+--}}
+
+<html>
+</html>
+`,
+},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
