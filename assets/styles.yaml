@@ -32,7 +32,7 @@
   middle: '  ~'
   end: '-->'
 
-- id: AngleBracketPercentHastag
+- id: AngleBracketPercentHashtag
   start: '<%'
   middle: '#'
   end: '%>'
